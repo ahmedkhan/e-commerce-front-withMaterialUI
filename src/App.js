@@ -4,6 +4,7 @@ import { signout, isAuthenticated } from "../src/auth";
 import { itemTotal } from "../src/core/cartHelpers";
 import { withRouter } from "react-router-dom";
 import Routes from "./Routes";
+import Header from "./core/Header";
 
 class App extends Component {
 
@@ -186,8 +187,12 @@ class App extends Component {
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
+        
         {collapseID && overlay}
+
+
         <main style={{ marginTop: "4rem" }}>
+         <Header/>
           <Routes />
         </main>
 

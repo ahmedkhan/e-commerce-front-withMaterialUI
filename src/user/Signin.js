@@ -38,7 +38,7 @@ const Signin = () => {
     const signUpForm = () => (        
       <div className="card">
         <h5 className="card-header info-color white-text text-center py-4">
-          <strong>Sign in</strong>
+          <strong>Sign in</strong>z
         </h5>        
         <div className="card-body px-lg-5 pt-0">
          
