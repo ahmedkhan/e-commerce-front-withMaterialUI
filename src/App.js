@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink } from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem,MDBNavLink } from "mdbreact";
 import { signout, isAuthenticated } from "../src/auth";
 import { itemTotal } from "../src/core/cartHelpers";
 import { withRouter } from "react-router-dom";
@@ -19,13 +19,7 @@ class App extends Component {
     if (history) { signout(() => { history.push('/') }) };
   }
 
-  isActive = (history, path) => {
-    if (history.location.pathname === path) {
-        return { backgroundColor: "#ff9900" };
-    } else {
-        return { backgroundColor: "#ffffff" };
-    }
-};
+  
   toggleCollapse = collapseID => () =>
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
@@ -67,8 +61,7 @@ class App extends Component {
                     <MDBNavLink
                       exact
                       to="/"
-                      onClick={this.closeCollapse("mainNavbarCollapse")}
-                       style={this.isActive(history,"/")}
+                      onClick={this.closeCollapse("mainNavbarCollapse")}                     
                     >
                       Home
                   </MDBNavLink>
@@ -77,7 +70,7 @@ class App extends Component {
                   <MDBNavItem>
                     <MDBNavLink
                       exact
-                      to="/"
+                      to="/cart"
                       onClick={this.closeCollapse("mainNavbarCollapse")}
                     >
                       Cart
@@ -88,7 +81,7 @@ class App extends Component {
                   <MDBNavItem>
                     <MDBNavLink
                       exact
-                      to="/"
+                      to="/user/dashboard"
                       onClick={this.closeCollapse("mainNavbarCollapse")}
                     >
                       Dashboard
@@ -192,16 +185,8 @@ class App extends Component {
 
 
         <main style={{ marginTop: "4rem" }}>
-         <Header/>
-          <Routes />
-        </main>
-
-
-        <MDBFooter color="indigo">
-          <p className="footer-copyright mb-0 py-3 text-center">
-            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-          </p>
-        </MDBFooter>
+         <Header/>         
+        </main>      
       </div>
 
     );

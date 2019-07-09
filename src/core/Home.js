@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import {  MDBFooter, MDBNavLink } from "mdbreact";
 import Card from "./Card";
+import App from "../App";
 import { getProducts } from "./apiCore";
-
-
-
-
-
-
+import Search from "./Search";
+import "../core/css/responsive.css";
+import "../core/css/ui.css";
+import "../core/css/bootstrap.css";
 
 const Home = () => {
     const [productsBySell, setProductsBySell] = useState([]);
@@ -39,11 +39,11 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <span className="d-block p-2 bg-primary text-white"><b>New Arrivals</b></span>
-            <br />       
-
-            <div className="row">
+        <div>        
+        <App/>        
+         <span className="d-block p-2 bg-primary text-white"><b>New Arrivals</b></span>
+          <br />  
+           <div className="row">
                 {productsByArrival.map((product, i) => (
                     <div key={i} className="col-4 mb-3">
                         <Card product={product} />
@@ -60,6 +60,12 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+
+            <MDBFooter color="indigo">
+          <p className="footer-copyright mb-0 py-3 text-center">
+            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+          </p>
+        </MDBFooter>
         </div>
     );
 };

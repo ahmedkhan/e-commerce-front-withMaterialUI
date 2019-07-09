@@ -2936,7 +2936,10 @@ input[type="button"].btn-block {
   margin-right: -1px; }
 
 .input-group-append {
-  margin-left: -1px; }
+  margin-left: -4px;
+  margin-top: -5.5px;
+  
+}
 
 .input-group-text {
   display: -webkit-box;
